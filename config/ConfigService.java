@@ -52,11 +52,7 @@ public class ConfigService {
 
             // load a properties file
             prop.load(input);
-
-
-
             config.setControllerName(prop.getProperty("controller"));
-            config.setAPI_ON(prop.getProperty("API_ON"));
 
 
         } catch (IOException ex) {
@@ -74,12 +70,7 @@ public class ConfigService {
         }
     }
 
-    public int getApiOn() {
-        ConfigService configService = new ConfigService();
-        configService.readConfigFile();
-        Config config = configService.getConfig();
-        return Integer.parseInt(config.getAPI_ON());
-    }
+
 
     public String getControllerName() {
 

@@ -3,7 +3,7 @@ workspace(name="org_dnosproject_dnos_services")
 git_repository(
     name = "dnos_core",
     remote = "https://github.com/dnos-project/dnos-core.git",
-    commit = "9618f0619f37ccbee81afdcc3ec8a17c6f35d36b"
+    commit = "43e58213fadc0197195c99eb418d89b305a543ed"
 
 )
 
