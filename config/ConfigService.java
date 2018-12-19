@@ -95,18 +95,11 @@ public class ConfigService {
 
 
     public Controller init(String controllerName) {
-        PropertyConfigurator.configure("resources/log4j.properties");
+        //PropertyConfigurator.configure("resources/log4j.properties");
         Controller controller = null;
         if (controllerName.equalsIgnoreCase("onos")) {
             return controller = new OnosController();
         }
-        //} else if (controllerName.equalsIgnoreCase("odl")) {
-        //    return controller = new OdlController();
-
-        //} else if(controllerName.equalsIgnoreCase("ryu"))
-        //{
-        //    return controller = new RyuController();
-        //}
         else {
 
             return controller;
