@@ -21,11 +21,20 @@ public class Config {
     private String onos_devices_url;
     private String onos_hosts_url;
     private String onos_flows_url;
+    private String controllerName;
 
 
 
     public Config() {
 
+    }
+
+    public void setControllerName(String controllerName) {
+        this.controllerName = controllerName;
+    }
+
+    public String getControllerName() {
+        return controllerName;
     }
 
     public String getOnos_flows_url() {

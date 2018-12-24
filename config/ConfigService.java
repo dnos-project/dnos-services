@@ -63,6 +63,8 @@ public class ConfigService {
             config.setOnos_hosts_url(prop.getProperty("ONOS_HOSTS_URL"));
             config.setOnos_links_url(prop.getProperty("ONOS_LINKS_URL"));
             config.setOnos_flows_url(prop.getProperty("ONOS_FLOWS_URL"));
+            config.setControllerName(prop.getProperty("CONTROLLER_NAME"));
+
 
 
 
