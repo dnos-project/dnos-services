@@ -20,6 +20,7 @@ import api.flowservice.Flow;
 import api.flowservice.FlowAction;
 import api.flowservice.FlowMatch;
 import api.flowservice.FlowService;
+import config.ConfigService;
 import drivers.onos.onosurls.OnosUrls;
 import org.apache.http.client.HttpClient;
 import org.apache.http.entity.StringEntity;
@@ -44,9 +45,11 @@ public class OnosFlowService extends FlowService {
     private static Logger log = Logger.getLogger(OnosFlowService.class);
 
     private final String APP_ID = "?appId=";
+    private ConfigService configService;
 
 
     public OnosFlowService() {
+        configService = new ConfigService();
     }
 
     /**
@@ -76,7 +79,7 @@ public class OnosFlowService extends FlowService {
         httpClient = DefaultRestApiHelper.createHttpClient("onos", "rocks");
 
         BufferedReader br = restApiHelper.httpPostRequest(httpClient,
-                OnosUrls.FLOWS.getUrl() + APP_ID + flow.getAppId(), stringEntity);
+                configService.getConfig().getOnos_flows_url() + APP_ID + flow.getAppId(), stringEntity);
 
         String output = null;
         String flowId = null;
@@ -130,7 +133,7 @@ public class OnosFlowService extends FlowService {
 
         httpClient = DefaultRestApiHelper.createHttpClient("onos", "rocks");
         DefaultRestApiHelper.httpDelRequest(httpClient,
-                OnosUrls.FLOWS.getUrl() + "/" + deviceID + "/" + FlowId);
+                configService.getConfig().getOnos_flows_url() + "/" + deviceID + "/" + FlowId);
         return true;
     }
 

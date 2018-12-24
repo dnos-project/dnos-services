@@ -20,11 +20,20 @@ public class Config {
     private String onos_links_url;
     private String onos_devices_url;
     private String onos_hosts_url;
+    private String onos_flows_url;
 
 
 
     public Config() {
 
+    }
+
+    public String getOnos_flows_url() {
+        return onos_flows_url;
+    }
+
+    public void setOnos_flows_url(String onos_flows_url) {
+        this.onos_flows_url = onos_flows_url;
     }
 
     public String getOnos_devices_url() {
