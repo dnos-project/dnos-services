@@ -17,6 +17,7 @@
 package drivers.onos.topostore.impl;
 
 import api.topostore.*;
+import config.ConfigService;
 import drivers.onos.onosurls.OnosUrls;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -39,7 +40,10 @@ import java.util.Set;
 public class OnosTopoStore extends TopoStore {
 
 
+    ConfigService configService;
+
     public OnosTopoStore() {
+        configService = new ConfigService();
 
     }
 
@@ -57,7 +61,7 @@ public class OnosTopoStore extends TopoStore {
             httpClient = DefaultRestApiHelper
                     .createHttpClient("onos", "rocks");
             HttpGet getRequest = DefaultRestApiHelper
-                    .getRequest(httpClient, OnosUrls.LINKS.getUrl());
+                    .getRequest(httpClient, configService.getConfig().getOnos_links_url());
             HttpResponse response = DefaultRestApiHelper
                     .getResponse(getRequest, httpClient);
 
@@ -133,7 +137,7 @@ public class OnosTopoStore extends TopoStore {
             httpClient = DefaultRestApiHelper
                     .createHttpClient("onos", "rocks");
             HttpGet getRequest = DefaultRestApiHelper
-                    .getRequest(httpClient, OnosUrls.HOSTS.getUrl());
+                    .getRequest(httpClient, configService.getConfig().getOnos_hosts_url());
             HttpResponse response = DefaultRestApiHelper
                     .getResponse(getRequest, httpClient);
 
