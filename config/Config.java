@@ -22,11 +22,28 @@ public class Config {
     private String onos_hosts_url;
     private String onos_flows_url;
     private String controllerName;
-
+    private String controllerIp;
+    private String grpcPort;
 
 
     public Config() {
 
+    }
+
+    public String getGrpcPort() {
+        return grpcPort;
+    }
+
+    public String getControllerIp() {
+        return controllerIp;
+    }
+
+    public void setGrpcPort(String grpcPort) {
+        this.grpcPort = grpcPort;
+    }
+
+    public void setControllerIp(String controllerIp) {
+        this.controllerIp = controllerIp;
     }
 
     public void setControllerName(String controllerName) {
