@@ -59,6 +59,7 @@ public class ConfigService {
 
             // load a properties file
             prop.load(input);
+
             config.setOnos_devices_url(prop.getProperty("ONOS_DEVICES_URL"));
             config.setOnos_hosts_url(prop.getProperty("ONOS_HOSTS_URL"));
             config.setOnos_links_url(prop.getProperty("ONOS_LINKS_URL"));
@@ -66,6 +67,8 @@ public class ConfigService {
             config.setControllerName(prop.getProperty("CONTROLLER"));
             config.setControllerIp(prop.getProperty("CONTROLLER_IP"));
             config.setGrpcPort(prop.getProperty("GRPC_PORT"));
+
+
 
 
 
