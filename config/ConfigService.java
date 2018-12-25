@@ -48,6 +48,7 @@ public class ConfigService {
 
 
 
+
     public void readConfigFile() {
         Properties prop = new Properties();
         InputStream input = null;
@@ -88,6 +89,11 @@ public class ConfigService {
             }
 
         }
+    }
+
+    public void init()
+    {
+        PropertyConfigurator.configure("resources/log4j.properties");
     }
 
 
